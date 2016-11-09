@@ -1,6 +1,5 @@
 package com.transcend.actest.model;
 
-import android.widget.Toast;
 
 import com.transcend.actest.bean.AsParticipant;
 
@@ -9,7 +8,7 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class partic implements parmodel {
 
-    String y;
+    private String y;
     @Override
     public String parsignup(String uname,String pw,String parStuNumber, String parName, String parCollegeCode, String parGrade, String parTelNumber) {
         AsParticipant par = new AsParticipant();
