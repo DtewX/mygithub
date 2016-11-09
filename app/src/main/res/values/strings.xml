@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">actest</string>
+    <string name="button1">创建数据</string>
+    <string name="button2">注册</string>
+    <string name="snot">学号：</string>
+    <string name="xuehao">请输入学号</string>
+    <string name="xingming">请输入姓名</string>
+    <string name="xueyuan">请输入学院</string>
+    <string name="nianji">请输入年级</string>
+    <string name="shoujihao">请输入手机号</string>
+    <string name="yonghuming">请输入用户名</string>
+    <string name="mima">请输入密码</string>
+</resources>
