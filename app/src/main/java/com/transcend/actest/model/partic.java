@@ -1,6 +1,8 @@
 package com.transcend.actest.model;
 
 
+import android.widget.Toast;
+
 import com.transcend.actest.bean.AsParticipant;
 
 import cn.bmob.v3.exception.BmobException;
@@ -8,9 +10,9 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class partic implements parmodel {
 
-    private String y;
+    private BmobException y;
     @Override
-    public String parsignup(String uname,String pw,String parStuNumber, String parName, String parCollegeCode, String parGrade, String parTelNumber) {
+    public BmobException parsignup(String uname,String pw,String parStuNumber, String parName, String parCollegeCode, String parGrade, String parTelNumber) {
         AsParticipant par = new AsParticipant();
         par.setUsername(uname);
         par.setPassword(pw);
@@ -24,10 +26,10 @@ public class partic implements parmodel {
             public void done(AsParticipant asParticipant, BmobException e) {
                 if(e==null){
                     //注册成功
-                    y="success";
+                    y=e;
                 }else{
                     //注册失败
-                    y="failure";
+                    y=e;
                 }
             }
         });

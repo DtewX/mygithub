@@ -19,9 +19,6 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    private Button button1;
-    private Button button2;
-    private Button button3;
     private EditText xuehao;
     private EditText xingming;
     private EditText xueyuan;
@@ -37,12 +34,14 @@ public class MainActivity extends Activity implements View.OnClickListener{
         Bmob.initialize(this, "90eb55c0de63532dc261983f633ed348");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button1=(Button)findViewById(R.id.button1);
+
+        Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(this);
-        button2=(Button)findViewById(R.id.button2);
+        Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
-        button3=(Button)findViewById(R.id.button3);
+        Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(this);
+
         xuehao=(EditText)findViewById(R.id.xuehao);
         xingming=(EditText)findViewById(R.id.xingming);
         xueyuan=(EditText)findViewById(R.id.xueyuan);
@@ -55,6 +54,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     stu asd;
+
+    BmobException a;
     public void toast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
@@ -88,15 +89,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 String sxy=xueyuan.getText().toString();
                 String nj=nianji.getText().toString();
                 String sjh=shoujihao.getText().toString();
-                String a=part.parsignup(sna,smm,sno,sname,sxy,nj,sjh);
-                if(a=="success")
+                a=part.parsignup(sna,smm,sno,sname,sxy,nj,sjh);
+                if(a==null) {
                     toast("注册成功");
-                else if (a=="failure")
-                    toast("注册失败");
-                //else{
-                    //String m=a.toString();
-                    //toast(m);
-                //}
+                }
+                else{
+                    toast("注册失败："+a);
+                }
                 break;
 
             case R.id.button3:

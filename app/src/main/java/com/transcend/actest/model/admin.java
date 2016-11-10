@@ -24,7 +24,7 @@ public class admin implements adminmodel {
                 if (e==null){
                     y="success";
                 }else{
-                    y="failure";
+                    y=e.toString();
                 }
             }
         });

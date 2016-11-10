@@ -12,7 +12,6 @@ import com.transcend.actest.model.adminmodel;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button glyzc;
     private EditText glyn;
     private EditText glymm;
     private adminmodel ad;
@@ -21,7 +20,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        glyzc=(Button)findViewById(R.id.glyzc);
+        Button glyzc = (Button) findViewById(R.id.glyzc);
         glyzc.setOnClickListener(this);
         glyn=(EditText)findViewById(R.id.glyn);
         glymm=(EditText)findViewById(R.id.glymm);
@@ -35,16 +34,13 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             String glynz=glyn.getText().toString();
             String glym=glymm.getText().toString();
             String a=ad.adminsignup(glynz,glym);
-            if(a=="success"){
+            if("success".equals(a)){
                 Toast.makeText(this,"注册成功",Toast.LENGTH_SHORT).show();
             }
-            else if (a=="failure"){
-                Toast.makeText(this,"注册失败",Toast.LENGTH_SHORT).show();
+
+             else{
+                Toast.makeText(this, "注册失败："+a, Toast.LENGTH_SHORT).show();
             }
-             //else{
-                //String n=a.toString();
-               // Toast.makeText(this, n, Toast.LENGTH_SHORT).show();
-            //}
                  break;
             default:
                 break;
