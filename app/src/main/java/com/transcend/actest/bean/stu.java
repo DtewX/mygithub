@@ -3,6 +3,7 @@ package com.transcend.actest.bean;
 import cn.bmob.v3.BmobObject;
 
 /**
+ * 学生类（测试用）
  * Created by X on 2016/11/6.
  */
 

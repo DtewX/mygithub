@@ -27,24 +27,26 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         ad=new admin();
     }
 
+    private void glyzc(){
+        String glynz=glyn.getText().toString();
+        String glym=glymm.getText().toString();
+        String a=ad.adminsignup(glynz,glym);
+        if("success".equals(a)){
+            Toast.makeText(this,"注册成功",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "注册失败："+a, Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.glyzc:
-            String glynz=glyn.getText().toString();
-            String glym=glymm.getText().toString();
-            String a=ad.adminsignup(glynz,glym);
-            if("success".equals(a)){
-                Toast.makeText(this,"注册成功",Toast.LENGTH_SHORT).show();
-            }
-
-             else{
-                Toast.makeText(this, "注册失败："+a, Toast.LENGTH_SHORT).show();
-            }
-                 break;
+                glyzc();
+                break;
             default:
                 break;
-
         }
     }
 }
